@@ -1,42 +1,71 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import { Link } from "gatsby"
+import styled from "styled-components"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+import Logo from "../assets/KIJ_logo.svg"
+
+import { Wrap } from "../components/styled"
+
+const Header = ({ links }) => (
+  <HeaderCon>
+    <Wrap>
+      <Link to="/">
+        <Logo id="logo" />
+      </Link>
+      <nav>
+        {links.map(link => (
+          <Link
+            activeStyle={{ fontWeight: "500" }}
+            key={link.name}
+            to={link.url}
+          >
+            {link.name}
+          </Link>
+        ))}
+      </nav>
+      <div id="nav-cta">
+        <a href="#" rel="noopener noreferrer">
+          Köp biljetter
+        </a>
+      </div>
+    </Wrap>
+  </HeaderCon>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+const HeaderCon = styled.header`
+  padding: 15px 0px;
+  ${Wrap} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav {
+    width: 100%;
+    margin: 0px 20px;
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+    a {
+      margin: 0px 10px;
+      text-decoration: none;
+      color: black;
+    }
+  }
+  #logo {
+    width: 200px;
+  }
+  #nav-cta {
+    padding: 10px;
+    background: var(--c-yellow);
+    width: 250px;
+    text-align: center;
+    border-radius: 5px;
+    a {
+      color: black;
+      font-weight: 500;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+`
 
 export default Header
