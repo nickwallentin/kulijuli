@@ -1,4 +1,5 @@
-import React from "react"
+import React, { Fragment } from "react"
+import Media from "react-media"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
@@ -6,28 +7,45 @@ import Logo from "../assets/KIJ_logo.svg"
 
 import { Wrap } from "../components/styled"
 
-const Header = ({ links }) => (
+import MenuIcon from "../assets/icons/menu.svg"
+
+const Header = ({ links, menuOpen, setMenuOpen }) => (
   <HeaderCon>
     <Wrap>
       <Link to="/">
         <Logo id="logo" />
       </Link>
-      <nav>
-        {links.map(link => (
-          <Link
-            activeStyle={{ fontWeight: "500" }}
-            key={link.name}
-            to={link.url}
-          >
-            {link.name}
-          </Link>
-        ))}
-      </nav>
-      <div id="nav-cta">
-        <a href="#" rel="noopener noreferrer">
-          Köp biljetter
-        </a>
-      </div>
+      <Media
+        query="(min-width: 786px)"
+        render={() => (
+          <Fragment>
+            <nav>
+              {links.map(link => (
+                <Link
+                  activeStyle={{ fontWeight: "500" }}
+                  key={link.name}
+                  to={link.url}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+            <div id="nav-cta">
+              <a href="/biljetter" rel="noopener noreferrer">
+                Köp biljetter
+              </a>
+            </div>
+          </Fragment>
+        )}
+      />
+      <Media
+        query="(max-width: 785px)"
+        render={() => (
+          <span onClick={() => setMenuOpen(true)}>
+            <MenuIcon />
+          </span>
+        )}
+      />
     </Wrap>
   </HeaderCon>
 )

@@ -9,7 +9,7 @@ const MainImage = () => {
 
 const query = graphql`
   query getMainImage {
-    file(name: { eq: "kij-temp-image" }) {
+    file(name: { eq: "kij-head-image" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid

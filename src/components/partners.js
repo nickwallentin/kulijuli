@@ -47,7 +47,10 @@ export default Partners
 
 const query = graphql`
   query getPartners {
-    allAirtable(filter: { table: { eq: "Sponsorer" } }) {
+    allAirtable(
+      filter: { table: { eq: "Sponsorer" } }
+      sort: { fields: data___Typ }
+    ) {
       edges {
         node {
           id

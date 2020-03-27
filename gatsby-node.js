@@ -13,6 +13,7 @@ exports.createPages = ({ actions, graphql }) => {
             data {
               Rubrik
               Titel
+              Synlig
             }
           }
         }
@@ -43,19 +44,21 @@ exports.createPages = ({ actions, graphql }) => {
         })
       }
       if (edge.node.table === "Program") {
-        const slug = edge.node.data.Titel.replace(/([äå])+/g, "a")
-          .replace(/([ö])+/g, "o")
-          .replace(/\W+/g, "-")
-          .toLowerCase()
-        createPage({
-          path: "/program/" + slug,
-          component: path.resolve(
-            `src/templates/${edge.node.table}Template.js`
-          ),
-          context: {
-            id,
-          },
-        })
+        if (edge.node.data.Synlig) {
+          const slug = edge.node.data.Titel.replace(/([äå])+/g, "a")
+            .replace(/([ö])+/g, "o")
+            .replace(/\W+/g, "-")
+            .toLowerCase()
+          createPage({
+            path: "/program/" + slug,
+            component: path.resolve(
+              `src/templates/${edge.node.table}Template.js`
+            ),
+            context: {
+              id,
+            },
+          })
+        }
       }
     })
   })

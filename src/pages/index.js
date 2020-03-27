@@ -29,7 +29,7 @@ const IndexPage = () => (
               <span>Kulijuli 2020</span>
             </h1>
 
-            <a href="#" className="cta">
+            <a href="/biljetter" className="cta">
               Köp biljetter
             </a>
             <div style={{ margin: "15px 0px" }}>
@@ -40,7 +40,9 @@ const IndexPage = () => (
               />
             </div>
           </div>
-          <div>Bild</div>
+          <div>
+            <MainImage />
+          </div>
         </Grid>
       </Wrap>
     </Sec>

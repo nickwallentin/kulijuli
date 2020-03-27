@@ -16,7 +16,7 @@ const ProgramPage = () => {
       </Sec>
       <Sec>
         <Wrap>
-          <h2>Huvudsponsorer</h2>
+          <h2>Guldsponsorer</h2>
           <Partners type="Guldsponsor" cols="1fr 1fr" mCols="1fr 1fr" />
         </Wrap>
       </Sec>
