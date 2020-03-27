@@ -9,12 +9,11 @@ import GoBack from "../components/goBack"
 import RelatedItems from "../components/relatedItems"
 import { Sec, Wrap } from "../components/styled"
 
-import AuthorAvatar from "../images/kij_avatar.jpg"
-
 const NyheterTemplate = ({ data }) => {
   const table = data.airtable.table
   const id = data.airtable.id
   const post = data.airtable.data
+  console.log(data.file)
   return (
     <Layout>
       <SEO title="Nyhets" />
@@ -40,10 +39,10 @@ const NyheterTemplate = ({ data }) => {
               }}
             />
             <div className="author">
-              <img
+              <Img
+                fluid={data.file.childImageSharp.fluid}
+                alt="Kulijuli author"
                 className="avatar"
-                src={AuthorAvatar}
-                alt="Publicerad av Kulijuli"
               />
               <p>
                 <small>Publicerat av</small>Kulijuli
@@ -74,17 +73,17 @@ const Article = styled.article`
     width: 500px;
     margin: 20px auto 0px auto;
     p {
+      margin-bottom: 0px;
       small {
         display: block;
         line-height: 0.8rem;
         color: #00000080;
       }
     }
-    img.avatar {
+    .avatar {
+      width: 44px;
+      height: 44px;
       border-radius: 99px;
-      overflow: hidden;
-      width: 34px;
-      height: 34px;
       margin-right: 15px;
     }
   }
@@ -113,6 +112,13 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    file(name: { eq: "KIJ_avatar" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

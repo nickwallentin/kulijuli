@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
@@ -24,24 +24,31 @@ const RelatedItems = ({ type, date, exclude }) => {
       return node
     }
   })
-  console.log(edges)
 
   return (
-    <RelatedItemsCon>
-      {type === "Nyheter" ? (
-        <RelatedNews>
-          {edges.map(({ node: news }) => {
-            return <NewsItem key={news.id} data={news.data} />
-          })}
-        </RelatedNews>
-      ) : (
-        <RelatedProgram>
-          {edges.map(({ node: program }) => (
-            <ProgramItem temp={tempImg} key={program.id} data={program.data} />
-          ))}
-        </RelatedProgram>
+    <Fragment>
+      {edges && (
+        <RelatedItemsCon>
+          {type === "Nyheter" ? (
+            <RelatedNews>
+              {edges.map(({ node: news }) => {
+                return <NewsItem key={news.id} data={news.data} />
+              })}
+            </RelatedNews>
+          ) : (
+            <RelatedProgram>
+              {edges.map(({ node: program }) => (
+                <ProgramItem
+                  temp={tempImg}
+                  key={program.id}
+                  data={program.data}
+                />
+              ))}
+            </RelatedProgram>
+          )}
+        </RelatedItemsCon>
       )}
-    </RelatedItemsCon>
+    </Fragment>
   )
 }
 
