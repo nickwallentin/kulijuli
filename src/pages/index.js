@@ -13,7 +13,7 @@ import { Sec, Wrap, Grid } from "../components/styled"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Sommarens höjdpunkt" />
     <Sec>
       <Wrap>
         <Grid cols="1fr 1fr">
