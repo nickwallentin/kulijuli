@@ -19,6 +19,9 @@ const Layout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
     <Fragment>
+      <GlobalMessage to="nyheter/kulijuli-2020-ar-installd">
+        Kulijuli 2020 är inställt. Klicka här för att läsa mer.
+      </GlobalMessage>
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} links={Links} />
       <div>
         <main>{children}</main>
@@ -83,8 +86,20 @@ const MobileMenu = styled.div`
   }
 `
 const Footer = styled.div`
+  padding: 20px 0px;
   & > div {
     display: flex;
     justify-content: space-between;
   }
+`
+
+const GlobalMessage = styled(Link)`
+  padding: 10px;
+  background: red;
+  color: white;
+  font-size: 1rem;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
 `

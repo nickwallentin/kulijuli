@@ -26,7 +26,7 @@ const IndexPage = () => (
           >
             <h1>
               Sommarens höjdpunkt.
-              <span>Kulijuli 2020</span>
+              <span>Kulijuli HX 2020 | Kulijuli 2021</span>
             </h1>
 
             <a href="/biljetter" className="cta">
