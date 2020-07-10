@@ -20,23 +20,6 @@ const ProgramList = () => {
   const filterDates = ["7 juli", "14 juli", "21 juli"]
   return (
     <ProgramCon>
-      <DateFilter>
-        <div
-          className={!filter ? "active" : null}
-          onClick={() => setFilter(null)}
-        >
-          Alla
-        </div>
-        {filterDates.map(date => (
-          <div
-            key={date}
-            className={date === filter ? "active" : null}
-            onClick={() => setFilter(date)}
-          >
-            {date}
-          </div>
-        ))}
-      </DateFilter>
       <ProgramItems>
         {matchEdges.map(({ node: node }) => (
           <ProgramItem temp={tempImg} key={node.data.id} data={node.data} />

@@ -30,11 +30,11 @@ const Header = ({ links, menuOpen, setMenuOpen }) => (
                 </Link>
               ))}
             </nav>
-            <div id="nav-cta">
+            {/* <div id="nav-cta">
               <a href="/biljetter" rel="noopener noreferrer">
                 Köp biljetter
               </a>
-            </div>
+              </div> */}
           </Fragment>
         )}
       />

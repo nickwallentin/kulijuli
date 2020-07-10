@@ -11,7 +11,7 @@ const ProgramPage = () => {
       <SEO title="Program 2020" />
       <Sec>
         <Wrap>
-          <h1 style={{ marginBottom: "40px" }}>Program 2020</h1>
+          <h1 style={{ marginBottom: "40px" }}>Artister på Hx-grytan 2020</h1>
           <ProgramList />
         </Wrap>
       </Sec>

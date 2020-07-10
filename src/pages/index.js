@@ -26,11 +26,14 @@ const IndexPage = () => (
           >
             <h1>
               Sommarens höjdpunkt.
-              <span>Kulijuli HX 2020 | Kulijuli 2021</span>
+              <span>Hx-grytan 2020</span>
             </h1>
 
-            <a href="/biljetter" className="cta">
-              Köp biljetter
+            <a
+              href="/nyheter/har-ar-artisterna-som-ska-vara-med-i-hx-grytan"
+              className="cta"
+            >
+              Läs mer om Hx-grytan
             </a>
             <div style={{ margin: "15px 0px" }}>
               <Partners
@@ -55,7 +58,7 @@ const IndexPage = () => (
     </Sec>
     <Sec dark>
       <Wrap>
-        <h2>Program</h2>
+        <h2>Artister på Hx-grytan</h2>
         <ProgramList />
       </Wrap>
     </Sec>

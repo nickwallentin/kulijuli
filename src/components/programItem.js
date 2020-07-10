@@ -24,9 +24,6 @@ const ProgramItem = ({ data, temp }) => {
           </div>
           <div className="content">
             <h4>{data.Titel}</h4>
-            <small>
-              <TimeIcon /> kl {data.Datum}
-            </small>
           </div>
         </ProgramItemCon>
       ) : (
@@ -36,9 +33,7 @@ const ProgramItem = ({ data, temp }) => {
           </div>
           <div className="content">
             <h4>Hemlig artist</h4>
-            <small>
-              <TimeIcon /> kl {data.Datum}
-            </small>
+            <small></small>
           </div>
         </ProgramItemConNoLink>
       )}
