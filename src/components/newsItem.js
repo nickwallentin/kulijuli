@@ -21,7 +21,7 @@ const NewsItem = ({ data }) => {
       </div>
       <div className="article-content">
         <h3>{data.Rubrik}</h3>
-        <span>{data.Publicerad}</span>
+        <span>Publicerades: {data.Publicerad}</span>
         <p>{excerpt}</p>
       </div>
     </Article>
