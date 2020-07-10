@@ -31,9 +31,7 @@ const ProgramTemplate = ({ data }) => {
             />
             <div className="content">
               <h1 style={{ marginBottom: "0px" }}>{post.Titel}</h1>
-              <span>
-                <TimeIcon /> kl {post.Datum}
-              </span>
+
               <p style={{ margin: "30px auto" }}>{post.Beskrivning}</p>
             </div>
           </ProgramItem>
