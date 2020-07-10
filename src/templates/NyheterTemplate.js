@@ -24,7 +24,7 @@ const NyheterTemplate = ({ data }) => {
         <Wrap width="600px">
           <Article>
             <div style={{ maxWidth: "500px", margin: "0px auto 30px auto" }}>
-              <span>{post.Publicerad}</span>
+              <span>Publicerades: {post.Publicerad}</span>
               <h1>{post.Rubrik}</h1>
             </div>
             <Img
