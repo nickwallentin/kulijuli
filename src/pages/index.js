@@ -30,7 +30,7 @@ const IndexPage = () => (
             </h1>
 
             <a
-              href="/nyheter/har-ar-artisterna-som-ska-vara-med-i-hx-grytan"
+              href="/nyheter/har-ar-artisterna-som-ska-vara-med-i-digitala-hx-grytan-pa-arenan"
               className="cta"
             >
               Läs mer om Hx-grytan
