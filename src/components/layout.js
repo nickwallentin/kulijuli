@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <Footer>
           <Wrap>
-            <span>© {new Date().getFullYear()} Kulijuli.</span>
+            <span>© {new Date().getFullYear()} Kulijuli. info@kulijuli.se</span>
             <span> Skapad av Creandia</span>
           </Wrap>
         </Footer>
